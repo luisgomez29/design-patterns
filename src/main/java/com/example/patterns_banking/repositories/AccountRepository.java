@@ -18,14 +18,14 @@ public class AccountRepository {
             CREATE TABLE IF NOT EXISTS accounts (
                 id BIGINT AUTO_INCREMENT PRIMARY KEY,
                 number VARCHAR(20) NOT NULL UNIQUE,
-                type VARCHAR(10),
+                type VARCHAR(10) NOT NULL,
                 balance DECIMAL(10, 2),
                 isActive BOOLEAN DEFAULT TRUE
             )
             """;
 
     private static final String INSERT_SQL = """
-            INSERT INTO accounts (number, type, balance, isActive) vALUES (?, ?, ?, ?)
+            INSERT INTO accounts (number, type, balance, isActive) VALUES (?, ?, ?, ?)
             """;
 
 
